@@ -1,0 +1,18 @@
+section {
+    width: 100%;
+   }
+   .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 20px;
+   }
+   .container img {
+    width: 420px;
+   }
+   .text {
+    display: block;
+    padding: 40px 40px;
+    width: 450px;
+   }

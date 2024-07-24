@@ -1,0 +1,17 @@
+<div class="container">
+<app-add-crud (crudAdd)="addCrud($event)"></app-add-crud>
+
+
+<div *ngIf="this.cruds.length===0 else elseValue" class="text-center"><h2>No Cruds List</h2></div>
+<ng-template #elseValue>
+    <h2 class="text-center">Total Your crud List({{this.cruds.length}})</h2>
+    <div *ngIf="totalactive===0 else elsetotal" class="text-center"></div>
+    <ng-template #elsetotal>
+            <h2 class="text-center">Done crud List({{totalactive}})</h2>
+            <h2 class="text-center">Pending crud List({{this.cruds.length-totalactive}})</h2>
+    </ng-template>
+    <div *ngFor="let crud of cruds; index as i">
+        <app-crud-item [crud] ="crud" [i]="i" (crudDelete)="deleteCrud($event)" (crudCheckboxClick)="toggelCrud($event)"></app-crud-item>
+    </div>
+</ng-template>
+</div>

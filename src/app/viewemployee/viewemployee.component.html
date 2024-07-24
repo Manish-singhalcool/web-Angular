@@ -1,0 +1,43 @@
+<!-- <div class="container">
+    <div class="mat-elevation-z8">
+        <table mat-table matSort  [dataSource]="dataSource" class="mat-elevation-z8">
+
+            
+            <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        
+
+        </table>
+    </div>
+</div>    -->
+
+<div class="container">
+    <!-- <form #userForm="ngForm"> -->
+        <div>
+            <mat-form-field >
+                <!-- <mat-label>Name</mat-label> -->
+                    <!-- <input matInput [(ngModel)]="user.name" name="name"> -->
+                    <input  readonly matInput  value={{user.name}}>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field >
+                <!-- <mat-label>Name</mat-label> -->
+                    <!-- <input matInput [(ngModel)]="user.name" name="name"> -->
+                    <input  readonly matInput  value={{user.username}}>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Todo</mat-label>
+                <mat-select [(ngModel)]="user.id" name="userId">
+                   <mat-option  *ngFor="let use of toodes"  [value]="use.id">{{use.title}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    <!-- </form> -->
+</div>

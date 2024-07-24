@@ -1,0 +1,19 @@
+.Mclss{
+    
+    text-decoration-line: none;
+    text-transform: uppercase;
+    list-style-type: none;
+}
+
+#Mclss li{
+   display: inline;
+
+}
+.tabLecss{
+    border:"1px solid #333";
+}
+table {
+    width: 100%;
+
+}
+

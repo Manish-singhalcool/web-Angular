@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Sing Up</h2>
+  <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+   <div class="row">
+        <div  class="mb-3">
+          <label>User Name : </label>
+          <input type="text" matInput formControlName="userName"  placeholder="User Name" />
+        
+        </div>
+        <!-- <span  *ngIf="userName && userName.invalid && userName.touched">Invalid Name</span> -->
+        <div  class="mb-3">
+          <label>User Password: </label>
+          <input type="password" formControlName="password" name="password"  placeholder="Password"/>
+        </div>
+        <div  class="mb-3">
+          <label>Confirm Password : </label>
+          <input type="password" formControlName="confirmPassword"   name="confirmPassword"  placeholder="Confirm Password"/>
+        </div>
+
+        <div  class="mb-3">
+          <label >Gender : </label>
+          <label class="form-check-label">Male </label>
+          <input type="radio"  class="form-check-input"   formControlName="gender" value="male"  name="male"  placeholder="gender"/>
+          <label class="form-check-label">Female </label>
+          <input type="radio" class="form-check-input" formControlName="gender"  value="female" name="female"  placeholder="gender"/>
+        </div>
+        <div  class="mb-3">
+          <label>City : </label>
+          <input type="text" formControlName="city"   name="city"  placeholder="city"/>
+        </div>
+
+        <div  class="mb-3">
+          <label>Country : </label>
+          <input type="text" formControlName="country"   name="country"  placeholder="country"/>
+        </div>
+        <input type="submit" value="submit" class="btn btn-primary">
+  </div>
+  </form>
+
+
+</div>
+
+<h1>{{item}}</h1>

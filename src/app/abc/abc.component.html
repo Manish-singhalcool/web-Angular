@@ -1,0 +1,70 @@
+<div class="container">
+    <h3>Two Way Bounding</h3>
+<input type="text" [(ngModel)] = "name" >
+
+<h3>
+    {{name | uppercase}}
+
+   
+</h3>
+
+<br/>
+<h3>
+    <h2>Number Format (Pipe)</h2>
+ <p> (start ho 2 say and after point three digit round of and show total no.of four digit number is (00002.33686))  =  {{00002.33686 | number : '2.3-4'}}</p>
+  <br/>
+<p>(start ho 2 say and after point three digit round of and show total no.of four digit number is (00002.33614))  =  {{00002.33614 | number : '2.3-4'}}</p>
+  <br/>
+<p>(start ho 2 say and after point three digit round of and show total no.of four digit number is (00002.33615))  =  {{00002.33615 | number : '2.3-4'}}</p>
+
+</h3>
+<br/>
+<h3>
+    <h2>Data On object convert on json Format (Pipe)</h2>
+    {{data | json}}
+
+   
+</h3>
+<br/>
+<h3>
+    <h2>Currency (Pipe)</h2>
+    USD : {{50 | currency:'USD'}}
+    <br/>
+    Indian : {{50 | currency:'INR'}}
+    <br/>
+    British Pound: {{50 | currency:'GBP'}}
+
+   
+</h3>
+<br/>
+<h3>
+    <h2>Date (Any format jo aap dena chaye) (Pipe)</h2>
+    {{today}}
+    <br/>
+    {{today | date}}
+    <br/>
+    {{today | date:'dd-MM-yyyy'}}
+    
+   
+</h3>
+<br/>
+<h3>
+    <h2>Custom Pipe</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let per of person">
+                <td>{{per.id}}</td>
+                <td>{{per.name | genderpipe : per.gender}}</td>
+                <td>{{per.gender }}</td>
+                <!-- <td>{{per.gender | genderpipe}}</td> -->
+            </tr>
+        </tbody>
+    </table>
+</h3>
+<br/><br/><br/><br/><br/>
+</div>

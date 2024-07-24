@@ -1,0 +1,31 @@
+<form #form="ngForm">
+    <div class="form-group">
+        <label for="ContactPre">Choose presence </label>
+        <input type="radio"  required  name="contactpreference"  value="Email"  ngModel  #cr="ngModel"> Email
+        <input type="radio"  required  name="contactpreference"  value="Phone"  ngModel  #cr="ngModel"> PhoneNumber
+        <br/>
+        <span *ngIf="cr.errors && cr.errors['required'] && cr.touched">
+            <p class="alert alert-denger">Choose one Contact Preference</p>
+        </span>
+    </div>
+    <br/>
+
+    <div class="form-group">
+        <label for="Email" >Email : </label>
+        <input [required]="cr.value=='Email'" type="text" name="Email" id="Email" value="" ngModel #et="ngModel" />
+        <br/>
+        <span *ngIf="et.errors && et.errors['required'] && et.touched  && et.invalid">
+            <p class="alert alert-denger">Email required</p>
+        </span>
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="Phone">Phone :</label>
+        <input [required]="cr.value=='Phone'" type="text" name="Phone" id="Phone" value="" ngModel #pt="ngModel" />
+        <br/>
+        <span *ngIf="pt.errors && pt.errors['required'] && pt.touched  && pt.invalid">
+            <p class="alert alert-denger">Phone required</p>
+        </span>
+    </div>
+
+</form>

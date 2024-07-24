@@ -1,0 +1,12 @@
+<form #form="ngForm" onsubmit="SendData(form)">
+    <div class="form-group">
+        <label for="PhotoPath">Enter Photo Path</label>
+        <input type="text" name="PhotoPath" id="PhotoPath" [(ngModel)]="PhotoPath"  #photoPrev="ngModel" class="form-control"  >
+    </div>
+    <div class="form-group">
+        <button  type="button" (click)="CheckPreview()">
+              {{ShowPriview?"hide":"show"}}Preview
+        </button>
+    </div>
+<img [src]="PhotoPath" height="200" width="300" *ngIf="ShowPriview" />
+</form>

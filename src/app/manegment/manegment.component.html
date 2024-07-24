@@ -1,0 +1,57 @@
+<div [formGroup]="form" 
+    style="
+    position: fixed;
+    width: 100%;
+    
+    /* display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    padding: 20px;
+    
+    
+   ">
+    <mat-icon (click)="addItem()" color="primary">add</mat-icon> 
+    <div formArrayName="items">
+        <div *ngFor="let item of items.controls; let i=index" [formGroupName]="i"
+            style="display: flex;gap: 10px;margin-bottom: 10px;padding: 2px;">
+            <!-- <input type="text" formControlName="name" placeholder="name">
+            <input type="text" formControlName="age" placeholder="age"> -->
+            <!-- <input type="text" name="name" [(ngModel)] = "cardioInputType" formControlName="type" >
+            <input type={{cardioInputType}}  placeholder="" formControlName="name"> -->
+            <mat-form-field class="example-full-width">
+                <mat-label>Type</mat-label>
+                <input matInput type="text" formControlName="type" placeholder="Type">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>Value</mat-label>
+                <input matInput [type]="getInputType(item.get('type').value)" placeholder="Value" formControlName="value"> 
+            </mat-form-field>
+            <!-- <input type="text" formControlName="type" placeholder="Type">
+            <input [type]="getInputType(item.get('type').value)" placeholder="Value" formControlName="value"> -->
+            <mat-icon (click)="deleteValue(i)" class="primary" title="Delete">delete</mat-icon> 
+            <div *ngIf="getItemNameControl(i).invalid && getItemNameControl(i).touched" style="color: red;">
+                <div *ngIf="getItemNameControl(i).errors['required']">
+                    You must enter a value
+                </div>
+                <div *ngIf="getItemNameControl(i).errors['pattern']">
+                    Invalid input format.
+            </div>
+           
+
+        </div>
+
+    </div>
+    <!-- {{form.value | json}} -->
+    <!-- <br/> -->
+    <button mat-raised-button color="primary" [disabled]="items.invalid" (click)="onFormSubmit()">Submit</button>
+ 
+</div>
+
+
+
+
+<!-- <div>
+    <label for="avatar">Choose a client:</label>
+    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+</div> -->

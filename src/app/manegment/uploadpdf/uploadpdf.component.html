@@ -1,0 +1,33 @@
+<div
+    style="
+    position: fixed;
+    width: 100%;
+    
+    /* display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    padding: 20px;
+    
+    
+   ">
+   <mat-form-field>
+        <mat-label>Select Clint</mat-label>
+        <mat-select [(ngModel)]="selectedClientId" (ngModelChange)="onClientSelected($event)">
+        
+            <mat-option *ngFor="let val of dataArray" [value]="val.id">
+                {{val.clientName}}
+            </mat-option>
+       
+        </mat-select>
+    </mat-form-field>
+    <div>
+        <label for="avatar">Choose a client:</label>
+        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" (change)="onFileSelected($event)" />
+    </div>
+    <!-- {{form.value | json}} -->
+    <!-- <br/> -->
+    <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
+ 
+</div>
+
